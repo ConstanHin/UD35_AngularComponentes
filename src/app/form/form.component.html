@@ -1,0 +1,26 @@
+  <h1>Alta cliente</h1>
+  <form (ngSubmit)="onSubmit()" #form="ngForm">
+    <div class="mb-3">
+      <label for="inputNombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="inputNombre" name="nombre" [(ngModel)]="nombre"/>
+    </div>
+    <div class="mb-3">
+      <label for="inputCif" class="form-label">CIF</label>
+      <input type="text" class="form-control" name="cif" id="inputCif" [(ngModel)]="cif"/>
+    </div>
+    <div class="mb-3">
+      <label for="inputDireccion" class="form-label">Dirección</label>
+      <input type="text" class="form-control" name="inputDireccion" id="inputDireccion" [(ngModel)]="direccion" />
+    </div>
+
+    <div class="mb-3">
+      <label class="form-check-label" for="selectGrupo">Grupo</label>
+      <select id="selectGrupo" class="form-select" aria-label="Default select example">
+        <option selected value="1">Sin definir</option>
+        <option value="2">Grupo 1</option>
+        <option value="3">Grupo 2</option>
+      </select>
+    </div>
+    <button class="btn btn-primary">Guardar</button>
+    <div>{{nombre}} {{cif}} {{direccion}}</div>
+  </form>

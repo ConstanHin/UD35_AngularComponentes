@@ -1,0 +1,22 @@
+<h1>Listado clientes</h1>
+<table class="table bg-light shadow-sm p-5 table-striped table-bordered">
+  <thead class="shadow-sm">
+    <tr>
+      <th class="col" scope="col">Nombre</th>
+      <th class="col" scope="col">CIF</th>
+      <th class="col" scope="col">Dirección</th>
+      <th class="col" scope="col">Grupo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cliente of listaClientes">
+
+      <td>cliente.nombre</td>
+      <td>cliente.cif</td>
+      <td>cliente.direccion</td>
+      <td>cliente.grupo</td>
+
+    </tr>
+
+  </tbody>
+</table>
