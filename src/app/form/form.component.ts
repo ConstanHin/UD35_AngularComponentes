@@ -13,6 +13,7 @@ export class FormComponent implements OnInit {
   cif: string = "";
   direccion: string = "";
   grupo: string = "";
+  alert: boolean = false;
 
   constructor() {
   }
@@ -29,9 +30,10 @@ export class FormComponent implements OnInit {
 
     // Si algun campo está vacio no enviar
     if (!this.allSelected()) {
+      this.alert = true;
       return;
     }
-
+    this.alert = false;
     // Enviar nuevo objeto
     this.newClienteEvent.emit({
       nombre: this.nombre,
