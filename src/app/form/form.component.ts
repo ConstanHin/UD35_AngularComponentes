@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-form',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormComponent implements OnInit {
 
-  nombre = "pepe";
+  @Output() newClienteEvent = new EventEmitter<Object>();
+
+  nombre = "";
   cif: string = "";
   direccion: string = "";
+  grupo: string = "";
 
   constructor() {
   }
@@ -22,4 +25,41 @@ export class FormComponent implements OnInit {
 
   }
 
+  addNewCliente() {
+
+    // Si algun campo está vacio no enviar
+    if (!this.allSelected()) {
+      return;
+    }
+
+    // Enviar nuevo objeto
+    this.newClienteEvent.emit({
+      nombre: this.nombre,
+      cif: this.cif,
+      direccion: this.direccion,
+      grupo: this.grupo
+    });
+
+    // Resetear las variables
+    this.nombre = "";
+    this.cif = "";
+    this.direccion = "";
+    this.grupo = "";
+
+  }
+
+  /**
+   *
+   * @returns Comprobar que todos los campos se ha llenado
+   */
+  allSelected() {
+    if (this.nombre != "" || this.cif != "" || this.direccion != "" || this.grupo != "") {
+      return true;
+    }
+    return false;
+  }
+
 }
+
+
+

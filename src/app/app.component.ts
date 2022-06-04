@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
   title = 'UD35_AngularComponentes';
+  listaClientes : {}[] = [];
+
+  addCliente(newCliente: {}) {
+    this.listaClientes.push(newCliente);
+  }
 }
