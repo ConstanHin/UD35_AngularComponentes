@@ -26,7 +26,13 @@ export class FormComponent implements OnInit {
 
   }
 
-  addNewCliente() {
+
+  /**
+   * Llamado por el botón "Guardar" del form.component
+   *
+   * @returns void
+   */
+  addNewCliente(): void {
 
     // Si algun campo está vacio no enviar
     if (!this.allSelected()) {
@@ -34,7 +40,7 @@ export class FormComponent implements OnInit {
       return;
     }
     this.alert = false;
-    // Enviar nuevo objeto
+    // Enviar nuevo objeto a través del evento
     this.newClienteEvent.emit({
       nombre: this.nombre,
       cif: this.cif,

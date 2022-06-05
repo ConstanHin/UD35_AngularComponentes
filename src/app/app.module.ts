@@ -4,19 +4,18 @@ import { FormsModule } from "@angular/forms";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormComponent } from './form/form.component';
-import { ListComponent } from './list/list.component';
+import { Vista1Module } from './vista1/vista1.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent,
-    ListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    Vista1Module
   ],
   providers: [],
   bootstrap: [AppComponent]
