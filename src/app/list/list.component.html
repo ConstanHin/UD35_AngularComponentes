@@ -1,22 +1,26 @@
-<h1>Listado clientes</h1>
-<table class="table bg-light shadow-sm p-5 table-striped table-bordered">
-  <thead class="shadow-sm">
-    <tr>
-      <th class="col" scope="col">Nombre</th>
-      <th class="col" scope="col">CIF</th>
-      <th class="col" scope="col">Dirección</th>
-      <th class="col" scope="col">Grupo</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let cliente of listaClientes">
+<div class="container shadow-sm bg-light rounded p-3 ">
+  <div class="row">
+    <h1>Listado clientes</h1>
+    <table class="table bg-light shadow-sm p-5 table-striped table-bordered">
+      <thead class="shadow-sm">
+        <tr>
+          <th class="col" scope="col">Nombre</th>
+          <th class="col" scope="col">CIF</th>
+          <th class="col" scope="col">Dirección</th>
+          <th class="col" scope="col">Grupo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let cliente of listaClientes">
 
-      <td>{{cliente.nombre}}</td>
-      <td>{{cliente.cif}}</td>
-      <td>{{cliente.direccion}}</td>
-      <td>{{cliente.grupo}}</td>
+          <td>{{cliente.nombre}}</td>
+          <td>{{cliente.cif}}</td>
+          <td>{{cliente.direccion}}</td>
+          <td>{{cliente.grupo}}</td>
 
-    </tr>
+        </tr>
 
-  </tbody>
-</table>
+      </tbody>
+    </table>
+  </div>
+</div>
