@@ -1,27 +1,40 @@
 <div class="row justify-content-center py-3 my-3">
 
-  <form class="col-md-6" (ngSubmit)="onSubmit()" #heroForm="ngForm">
+  <form class="col-md-6" (ngSubmit)="onSubmit()" #formC="ngForm">
     <!-- Name -->
     <div class="mb-3">
       <label for="inputNombre" class="form-label">Nombre</label>
-      <input type="text" required class="form-control" id="inputNombre" name="nombre" [(ngModel)]="nombre" />
+      <input type="text" required class="form-control" id="inputNombre" name="nombre" [(ngModel)]="nombre"
+        #nameC="ngModel" />
+    </div>
+    <!-- mensaje validacion nombre-->
+    <div [hidden]="nameC.valid || nameC.pristine" class="alert alert-danger" role="alert">
+      Introduce tu nombre
     </div>
     <!-- Email -->
     <div class="mb-3">
       <label for="email" class="form-label">Email</label>
-      <input type="email" required class="form-control" id="email" name="email" placeholder="name@example.com"
-        [(ngModel)]="email">
+      <input type="email" required class="form-control" id="email" email name="email" placeholder="name@example.com"
+        #emailC="ngModel" [(ngModel)]="email">
+      <!-- nats-- nded not neded --noc -->
+    </div>
+    <!-- mensaje validacion email-->
+    <div [hidden]="emailC.valid || nameC.pristine" class="alert alert-danger" role="alert">
+      Introduce tu email
     </div>
     <!-- Message -->
     <div class="mb-3">
-      <label for="inputMessage" class="form-label">Dirección</label>
-      <input type="text" required class="form-control" name="inputMessage" id="inputMessage"
-        [(ngModel)]="message" />
+      <label for="inputMessage" class="form-label">Mensaje</label>
+      <textarea type="textarea" required class="form-control" name="inputMessage" id="inputMessage"
+        [(ngModel)]="message" #messageC="ngModel">
+      </textarea>
+    </div>
+    <!-- mensaje validacion mensaje-->
+    <div [hidden]="messageC.valid || nameC.pristine" class="alert alert-danger" role="alert">
+      Escribe un mensaje
     </div>
 
-    <!-- Validacion antispam-->
-
-    <button class="btn btn-primary">Enviar</button>
+    <button [disabled]="formC.invalid" class="btn btn-primary">Enviar</button>
 
   </form>
 </div>
